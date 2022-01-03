@@ -1,0 +1,42 @@
+<div class="container">
+    <div>
+         <h2>Ajouter un Animal :</h2>
+    </div>
+    <form >
+        <div class="col-sm-2 col-md-2 col-lg-2">
+                <label >ID Animal</label>
+            <input type="text" [(ngModel)]="newAnimal.idAnimal"
+                name="idAnimal" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+                <label >Nom Animal</label>
+            <input type="text"[(ngModel)]= "newAnimal.nomAnimal"
+                  name="nomAnimal" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label >Couleur Animal</label>
+        <input type="text" [(ngModel)]= "newAnimal.couleur"
+        name="couleur" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+                <label >Description</label>
+            <input type="text" [(ngModel)]= "newAnimal.description"
+                name="description" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Race</label>
+            <select class="form-control form-control-lg" id="idRace" name="idRace"
+                [(ngModel)]="newIdRa">
+                <option *ngFor="let rac of races" [value]="rac.idRace" >
+                {{rac.nomRace}}
+                </option>
+            </select>
+            </div>
+        <div class="mt-2">
+        <button type="submit" (click)="addAnimal()" class="btn btn-success">Ajouter</button>
+            <div>
+                <h3>{{message}}</h3>
+            </div>
+    </div>
+        </form>
+     </div>
